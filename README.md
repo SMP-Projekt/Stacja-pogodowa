@@ -18,7 +18,7 @@ repozytorium (porządek i aktualizacja),
 efekt końcowy.
 5. W trakcie wykonywania projektu należy przestrzegać ustalonych przez prowadzącego zajęcia terminów.
 
-<b>-----------------------------------------------------------------------------------------------------------------------------------</b>
+<b>--------------------------------------------------------------------------------------------------------------------------------</b>
 
 <b>Założenia projektowe:</b>
   1) Odczyt danych z Nucleo Weather przez I2C przy użyciu przerwań co 10 minut.
@@ -29,8 +29,8 @@ efekt końcowy.
 
 
 <b>Wykorzystane protokoły:</b>
--UART
--I2C
+  - UART
+  - I2C
 
 <b>Układy wykorzystane w projekcie:</b>
   - płytka Kinetis FRDM-KL46Z
@@ -38,5 +38,5 @@ efekt końcowy.
   - moduł ESP2866
   
 <b>Wykorzystane peryferia:</b>
-  -???
+  - ???
   
