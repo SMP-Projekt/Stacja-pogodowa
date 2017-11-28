@@ -18,7 +18,7 @@ repozytorium (porządek i aktualizacja),
 efekt końcowy.
 5. W trakcie wykonywania projektu należy przestrzegać ustalonych przez prowadzącego zajęcia terminów.
 
-<b>------------------------------------------------------------------------------------------------------------------------------------<b>
+<b>-----------------------------------------------------------------------------------------------------------------------------------</b>
 
 <b>Założenia projektowe:</b>
   1) Odczyt danych z Nucleo Weather przez I2C przy użyciu przerwań co 10 minut.
