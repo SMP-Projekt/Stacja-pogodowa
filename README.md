@@ -25,3 +25,5 @@ Założenia projektowe:
   3) Przesłanie danych przez UART do modułu ESP z wifi.
   4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
   5) Prezentacja pomiarów w graficznej formie (HTML).
+
+<b>WŁADZA W RĘCE LUDU!!!</b>
