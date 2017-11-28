@@ -1,1 +1,3 @@
 # Stacja-pogodowa
+
+Założenia projektowe:
