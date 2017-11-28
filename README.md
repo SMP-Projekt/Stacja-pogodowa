@@ -27,8 +27,16 @@ efekt końcowy.
   4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
   5) Prezentacja pomiarów na stronie internetowej (HTML).
 
+
+<b>Wykorzystane protokoły:</b>
+-UART
+-I2C
+
 <b>Układy wykorzystane w projekcie:</b>
   - płytka Kinetis FRDM-KL46Z
   - KA Nucleo Weather (stacja pogodowa)
   - moduł ESP2866
+  
+<b>Wykorzystane peryferia:</b>
+  -???
   
