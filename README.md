@@ -26,4 +26,4 @@ Założenia projektowe:
   4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
   5) Prezentacja pomiarów w formie graficznej (HTML).
 
-<b>WŁADZA W RĘCE LUDU!!!</b>
+<b>WŁADZA W RĘCE LUDU!!!</b> ddd
