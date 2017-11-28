@@ -1,7 +1,7 @@
 # Stacja-pogodowa
 
 
-Wymagania:
+<b>Wymagania:</b>
 1. Wykonanie projektu jest obowiązkowe.
 2. Projekt powinien być wykonany na platformie FRDM-KL46Z lub podobnej (procesor ARM Cortex-M). Język programowania mikrokontrolera: C/C++.
 3. Projekt musi zawierać:
@@ -19,11 +19,18 @@ efekt końcowy.
 5. W trakcie wykonywania projektu należy przestrzegać ustalonych przez prowadzącego zajęcia terminów.
 
 
-Założenia projektowe:
+<b>Założenia projektowe:</b>
   1) Odczyt danych z Nucleo Weather przez I2C przy użyciu przerwań co 10 minut.
   2) Zapis pomiarów w mikrokontrolerze.
   3) Przesłanie danych przez UART do modułu ESP z wifi.
   4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
   5) Prezentacja pomiarów na stronie internetowej (HTML).
 
+<b>Spis narzędzi:</b>
+  - płytka Kinetis FRDM-KL46Z
+  - KA Nucleo Weather (stacja pogodowa)
+  - moduł ESP2866
+  - laptop
+  - przewody połączeniowe
+  
 <b>WŁADZA W RĘCE LUDU!!!</b>
