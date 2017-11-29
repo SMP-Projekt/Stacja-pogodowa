@@ -38,6 +38,5 @@ efekt końcowy.
   - moduł ESP2866
   
 <b>Wykorzystane peryferia:</b>
-  - Timer
-  - Przetwornik ADC
+  - Timer, jaki?
   
