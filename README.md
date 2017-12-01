@@ -24,7 +24,7 @@ efekt końcowy.
   1) Odczyt danych z Nucleo Weather przez I2C po przyciśnięciu przycisku na stronie internetowej, w sposób ciągły co 10 sekund lub jednorazowo. Gdy przestaniemy pobierać dane, układ przejdzie w tryb uśpienia.
   2) Zapis pomiarów w mikrokontrolerze.
   3) Przesłanie danych przez UART do modułu ESP z wifi.
-  4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
+  4) Pobranie danych przy użyciu wi-fi przez urządzenie zewnętrzne.
   5) Prezentacja pomiarów na stronie internetowej (HTML).
 
 <b>Wykorzystane protokoły:</b>  
