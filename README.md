@@ -21,22 +21,22 @@ efekt końcowy.
 <b>--------------------------------------------------------------------------------------------------------------------------------</b>
 
 <b>Założenia projektowe:</b>
-  1) Odczyt danych z Nucleo Weather przez I2C przy użyciu przerwań co 10 minut.
+  1) Odczyt danych z Nucleo Weather przez I2C po przyciśnięciu przycisku na stronie internetowej, w sposób ciągły co 10 sekund lub jednorazowo. Gdy przestaniemy pobierać dane, układ przejdzie w tryb uśpienia.
   2) Zapis pomiarów w mikrokontrolerze.
   3) Przesłanie danych przez UART do modułu ESP z wifi.
   4) Pobranie danych przy użyciu wi-fi przez urządrzenie zewnętrzne.
   5) Prezentacja pomiarów na stronie internetowej (HTML).
 
-
-<b>Wykorzystane protokoły:</b>
-  - UART
-  - I2C
-
-<b>Układy wykorzystane w projekcie:</b>
-  - płytka Kinetis FRDM-KL46Z
-  - KA Nucleo Weather (stacja pogodowa)
-  - moduł ESP2866
+<b>Wykorzystane protokoły:</b>  
+  - UART,  
+  - I2C.  
   
-<b>Wykorzystane peryferia:</b>
-  - Timer, jaki?
+<b>Układy wykorzystane w projekcie:</b>  
+  - płytka Kinetis FRDM-KL46Z,  
+  - KA Nucleo Weather (stacja pogodowa),  
+  - moduł ESP2866.  
+  
+<b>Wykorzystane peryferia:</b>  
+  - timery,  
+  - tryb uśpienia.  
   
