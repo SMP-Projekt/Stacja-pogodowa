@@ -28,6 +28,7 @@
  void I2C_wait(void);
  
  void I2C_writeRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, uint8_t u8Data);
+ void I2C_writeRegister_TSL(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, uint8_t u8Data);
  unsigned char I2C_ReadRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress);
  void I2C_ReadMultiRegisters(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, uint8_t n, uint8_t *data);
 
