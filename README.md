@@ -46,7 +46,7 @@ c)  Wykorzystane peryferia:
 •	tryb uśpienia.  
   
 <b>V. Schemat blokowy:</b>  
-![](Schemat blokowy.png)
+![](Schemat_blokowy.png)
   
 <b>VI. Kamienie milowe:</b>  
 1. Połączenie mikrokontrolera z zestawem czujników. (18-24 grudnia)  
