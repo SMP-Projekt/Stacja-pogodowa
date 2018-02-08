@@ -22,7 +22,7 @@ efekt końcowy.
 
 <b>I. Tytuł: Stacja pogodowa</b>  
   
-<b>II. Autorzy: /b>  
+<b>II. Autorzy: </b>  
   
 <b>III. Założenia projektowe:</b>  
 1.	Odczyt danych z Nucleo Weather przez I2C po przyciśnięciu przycisku na stronie internetowej, w sposób ciągły co 10 sekund lub jednorazowo. Gdy przestaniemy pobierać dane, układ przejdzie w tryb uśpienia.  
