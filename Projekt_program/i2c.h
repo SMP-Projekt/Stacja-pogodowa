@@ -3,7 +3,7 @@
  *----------------------------------------------------------------------------
  *      Name:    i2c.h
  *      Purpose: Wheather Station - project
- *			Author: Michal Mrowiec & Marek Krupa
+ *			Author: DarthSkipper & ArdeoDeo
  *			Date: 09-12-2017
  *----------------------------------------------------------------------------
  *      ^^^^^WHEATHER STATION^^^^^
@@ -11,6 +11,7 @@
  #ifndef i2c_h
  #define i2c_h
  #include "MKL46Z4.h"	/* Device header */	
+ #include "inne.h"
  
  #define I2C1_Interrupt (IRQn_Type) 9
  #define PORTE_SCL 1

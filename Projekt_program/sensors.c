@@ -3,15 +3,18 @@
  *----------------------------------------------------------------------------
  *      Name:    sensors.c
  *      Purpose: Wheather Station - project
- *			Author: Michal Mrowiec & Marek Krupa
+ *			Author: DarthSkipper & ArdeoDeo
  *			Date: 09-12-2017
  *----------------------------------------------------------------------------
  *      ^^^^^WHEATHER STATION^^^^^
  *---------------------------------------------------------------------------*/
  #include "sensors.h"
- /*----------------------------------------------------------------------------
-	Function setting registeres of sensors
-*----------------------------------------------------------------------------*/
+/*************************************************************************
+Function: turnOnSensors()
+Purpose:  sets registers Nucleo to initialize sensors
+Input:    none
+Returns:  none          
+**************************************************************************/
  void turnOnSensors(void)
  {
 	SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;	/* Enable clock for PORTC */
@@ -24,8 +27,7 @@
 	 
 	I2C_writeRegister(HTS221_ADDR, 0x20, 0x06);		/* Set 1 Hz measure */
 	I2C_writeRegister(HTS221_ADDR, 0x20, 0x86);		/* Turn on humidity sensor */
-	
-	//I2C_writeRegister(TSL25721_ADDR, TSL25721_ADDR, 0x20);	 
+		 
 	I2C_writeRegister_TSL(TSL25721_ADDR, 0x01, 0xF6);	/* 27,3 ms///51.87 ms */
 	I2C_writeRegister_TSL(TSL25721_ADDR, 0x0F, 0x02);	/* Set gain 16x*/
 	//I2C_writeRegister(TSL25721_ADDR, 0x0D, 0x04);	/* Scale gain by 0.16 */
@@ -34,9 +36,13 @@
 	 
 	 
  }
-/*----------------------------------------------------------------------------
-	Function returning temperature
-*----------------------------------------------------------------------------*/
+
+/*************************************************************************
+Function: temperatureRead()
+Purpose:  Function returning temperature
+Input:    none
+Returns:  temperature (st. C)          
+**************************************************************************/
 float temperatureRead(void)
 {
 	float result;
@@ -54,9 +60,12 @@ float temperatureRead(void)
 	
 	return result;
 }
-/*----------------------------------------------------------------------------
-	Function returning pressure
-*----------------------------------------------------------------------------*/
+/*************************************************************************
+Function: pressureRead()
+Purpose:  Function returning pressure
+Input:    none
+Returns:  pressure (hPa)          
+**************************************************************************/
 uint32_t pressureRead(void)
 {
 	uint8_t LPS331Data[3];
@@ -72,9 +81,13 @@ uint32_t pressureRead(void)
 	
 	return press;
 }
-/*----------------------------------------------------------------------------
-	Function returning humidity
-*----------------------------------------------------------------------------*/
+
+/*************************************************************************
+Function: humidityRead()
+Purpose:  Function returning humidity
+Input:    none
+Returns:  humidity (%rH)          
+**************************************************************************/
 uint32_t humidityRead(void)
 {
 	int16_t H0_T0_out, H1_T0_out, H_T_out;
@@ -105,36 +118,31 @@ uint32_t humidityRead(void)
 
 	return humi;
 }
-/*----------------------------------------------------------------------------
-	Function returning light
-*----------------------------------------------------------------------------*/
+/*************************************************************************
+Function: lightRead()
+Purpose:  Function returning light
+Input:    none
+Returns:  light (lux)          
+**************************************************************************/
 float lightRead(void)
 {
 	float lux1, lux2;
-	float CPL = 7.28; //0.455	//(ATIME_ms(27,3)*AGAINx(16.0))/(GA(1)*60)
+	float CPL = 7.28; //(ATIME_ms(27,3)*AGAINx(16.0))/(GA(1)*60)
 	int16_t C0Data, C1Data;
 	uint8_t TSL25721_Data[4];
 	
+	/* Before reading write command register */
 	I2C_start();
 	I2C_writeByte(TSL25721_ADDR & 0xFE);
 	I2C_wait();
 	I2C_writeByte(0xA0 | TSL25721_C0DATA); //0x14 <- address, enable multi read
 	I2C_wait();
 	I2C_stop();
-  delay_mc(50);
+  delay_ms(50);
+	/* Read registers C0Data and C1Data */
 	I2C_ReadMultiRegisters(TSL25721_ADDR, TSL25721_C0DATA, 4, TSL25721_Data);
 	C0Data = (TSL25721_Data[1] << 8) | TSL25721_Data[0];
 	C1Data = (TSL25721_Data[3] << 8) | TSL25721_Data[2];
-	/* Read C0DATA coefficients */
-	//I2C_ReadMultiRegisters(TSL25721_ADDR, TSL25721_C0DATA, 2, TSL25721_Data);
-//	TSL25721_Data[0] = I2C_ReadRegister(TSL25721_ADDR, TSL25721_C0DATA);
-//	TSL25721_Data[1] = I2C_ReadRegister(TSL25721_ADDR, TSL25721_C0DATA2);
-//	C0Data = (int16_t)(TSL25721_Data[1]<<8) | (int16_t)TSL25721_Data[0];
-//	/* Read C1DATA coefficients */
-//	//I2C_ReadMultiRegisters(TSL25721_ADDR, TSL25721_C1DATA, 2, TSL25721_Data);
-//	TSL25721_Data[0] = I2C_ReadRegister(TSL25721_ADDR, TSL25721_C1DATA);
-//	TSL25721_Data[1] = I2C_ReadRegister(TSL25721_ADDR, TSL25721_C1DATA2);
-//	C1Data = (int16_t)(TSL25721_Data[1]<<8) | (int16_t)TSL25721_Data[0];
 	/* Calculate lux */
 	lux1 = ((float)C0Data - 1.87 * (float)C1Data)/CPL;
 	lux2 = (0.63 * (float)C0Data - (float)C1Data)/CPL;

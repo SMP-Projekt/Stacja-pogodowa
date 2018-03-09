@@ -3,13 +3,12 @@
  *----------------------------------------------------------------------------
  *      Name:    i2c.c
  *      Purpose: Wheather Station - project
- *			Author: Michal Mrowiec & Marek Krupa
+ *			Author: DarthSkipper & ArdeoDeo
  *			Date: 09-12-2017
  *----------------------------------------------------------------------------
  *      ^^^^^WHEATHER STATION^^^^^
  *---------------------------------------------------------------------------*/
  #include "i2c.h"
- #include "extra.h" 
 
  /*----------------------------------------------------------------------------
 	Function initializing I2C (see page 740 Reference Manual)
@@ -114,7 +113,7 @@ void I2C_writeRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, uint8_
 
 	I2C_stop();
 
-  delay_mc(50);
+  delay_ms(50);
 }
 /*----------------------------------------------------------------------------
 	Write byte's of data to device register TSL only!!!!
@@ -133,7 +132,7 @@ void I2C_writeRegister_TSL(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, ui
 	
 	I2C_stop();
 
-  delay_mc(50);
+  delay_ms(50);
 }
 /*----------------------------------------------------------------------------
 	Read 8 bits of data from device register and return it
@@ -161,7 +160,7 @@ uint8_t I2C_ReadRegister(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress)
 	I2C_wait();
 	I2C_stop();  
 	result = I2C_readByte();
-	delay_mc(50);
+	delay_ms(50);
 	return result;
 } 
 /*----------------------------------------------------------------------------
@@ -202,5 +201,5 @@ void I2C_ReadMultiRegisters(uint8_t u8SlaveAddress, uint8_t u8RegisterAddress, u
 	I2C_wait();
 	I2C_stop();
 	*data = I2C_readByte(); 
-	delay_mc(50);		
+	delay_ms(50);		
 }
